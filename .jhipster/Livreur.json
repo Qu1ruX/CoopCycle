@@ -1,0 +1,73 @@
+{
+  "name": "Livreur",
+  "fields": [
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "mail",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern"
+      ],
+      "fieldValidateRulesPattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "reviews",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required",
+        "min",
+        "max"
+      ],
+      "fieldValidateRulesMin": "1",
+      "fieldValidateRulesMax": "5"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "livreur",
+      "relationshipName": "course"
+    }
+  ],
+  "changelogDate": "20210411194642",
+  "entityTableName": "livreur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

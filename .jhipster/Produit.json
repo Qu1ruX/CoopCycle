@@ -1,0 +1,59 @@
+{
+  "name": "Produit",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "commande"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commerce",
+      "otherEntityRelationshipName": "produit",
+      "relationshipName": "commerce",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210411194742",
+  "entityTableName": "produit",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

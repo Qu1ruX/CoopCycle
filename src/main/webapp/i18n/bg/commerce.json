@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "commerce": {
+      "home": {
+        "title": "Commerce",
+        "createLabel": "Създайте нов Commerce",
+        "createOrEditLabel": "Създайте или редактирайте Commerce",
+        "notFound": "Commerce не са намерени"
+      },
+      "created": "Създаден е нов Commerce с идентификатор {{ param }}",
+      "updated": "Commerce с идентификатор {{ param }} e oбновен",
+      "deleted": "Commerce с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Commerce {{ id }}?"
+      },
+      "detail": {
+        "title": "Commerce"
+      },
+      "name": "Name",
+      "reviews": "Reviews",
+      "address": "Address",
+      "produit": "Produit",
+      "commande": "Commande",
+      "cooperative": "Cooperative"
+    }
+  }
+}

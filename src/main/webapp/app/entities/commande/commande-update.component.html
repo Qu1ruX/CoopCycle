@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-commande-heading" jhiTranslate="coopCycleApp.commande.home.createOrEditLabel">Create or edit a Commande</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('date')!.invalid && (editForm.get('date')!.dirty || editForm.get('date')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('date')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.price" for="field_price">Price</label>
+                    <input type="number" class="form-control" name="price" id="field_price"
+                           formControlName="price"/>
+                    <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('price')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.client" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" formControlName="client">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id === editForm.get('client')!.value?.id ? editForm.get('client')!.value : clientOption" *ngFor="let clientOption of clients; trackBy: trackById">{{ clientOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.course" for="field_course">Course</label>
+                    <select class="form-control" id="field_course" name="course" formControlName="course">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="courseOption.id === editForm.get('course')!.value?.id ? editForm.get('course')!.value : courseOption" *ngFor="let courseOption of courses; trackBy: trackById">{{ courseOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.commerce" for="field_commerce">Commerce</label>
+                    <select class="form-control" id="field_commerce" name="commerce" formControlName="commerce">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commerceOption.id === editForm.get('commerce')!.value?.id ? editForm.get('commerce')!.value : commerceOption" *ngFor="let commerceOption of commerce; trackBy: trackById">{{ commerceOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="coopCycleApp.commande.produit" for="field_produit">Produit</label>
+                    <select class="form-control" id="field_produit" name="produit" formControlName="produit">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="produitOption.id === editForm.get('produit')!.value?.id ? editForm.get('produit')!.value : produitOption" *ngFor="let produitOption of produits; trackBy: trackById">{{ produitOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

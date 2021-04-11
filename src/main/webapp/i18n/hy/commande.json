@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "createLabel": "Ստեղծել նոր Commande",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Commande",
+        "notFound": "No Commandes found"
+      },
+      "created": "Նոր Commande ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Commande թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Commande հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Commande {{ id }}?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "date": "Date",
+      "price": "Price",
+      "client": "Client",
+      "course": "Course",
+      "commerce": "Commerce",
+      "produit": "Produit"
+    }
+  }
+}

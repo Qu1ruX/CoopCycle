@@ -1,0 +1,49 @@
+{
+  "name": "Course",
+  "fields": [
+    {
+      "fieldName": "price",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "distance",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "commande"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "livreur",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "livreur",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210411194542",
+  "entityTableName": "course",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

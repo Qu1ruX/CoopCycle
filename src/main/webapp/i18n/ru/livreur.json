@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "livreur": {
+      "home": {
+        "title": "Livreurs",
+        "createLabel": "Создать новый Livreur",
+        "createOrEditLabel": "Создать или отредактировать Livreur",
+        "notFound": "No Livreurs found"
+      },
+      "created": "Новый Livreur создан с идентификатором {{ param }}",
+      "updated": "Livreur обновлен с идентификатором {{ param }}",
+      "deleted": "Livreur удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Livreur {{ id }}?"
+      },
+      "detail": {
+        "title": "Livreur"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "mail": "Mail",
+      "phone": "Phone",
+      "reviews": "Reviews",
+      "course": "Course"
+    }
+  }
+}

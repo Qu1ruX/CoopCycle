@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "livreur": {
+      "home": {
+        "title": "Livreurs",
+        "createLabel": "创建新 Livreur",
+        "createOrEditLabel": "创建或编辑 Livreur",
+        "notFound": "No Livreurs found"
+      },
+      "created": "Livreur {{ param }} 创建成功",
+      "updated": "Livreur {{ param }} 更新成功",
+      "deleted": "Livreur {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Livreur {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Livreur"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "mail": "Mail",
+      "phone": "Phone",
+      "reviews": "Reviews",
+      "course": "Course"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="client">
+            <h2><span jhiTranslate="coopCycleApp.client.detail.title">Client</span> {{ client.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="coopCycleApp.client.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{ client.firstname }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.client.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{ client.lastname }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.client.mail">Mail</span></dt>
+                <dd>
+                    <span>{{ client.mail }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.client.phone">Phone</span></dt>
+                <dd>
+                    <span>{{ client.phone }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.client.address">Address</span></dt>
+                <dd>
+                    <span>{{ client.address }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/client', client.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

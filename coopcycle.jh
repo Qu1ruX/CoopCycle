@@ -1,0 +1,58 @@
+entity Client {
+    id Integer required
+    firstname String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    lastname String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    mail String required pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)
+    phone String required
+    address String required maxlength(100)
+}
+
+entity Commande {
+    date LocalDate required
+    price Float required min(0)
+}
+
+entity Course {
+    price Float required min(0)
+    distance Float required min(0)
+}
+
+entity Livreur {
+    id Integer required
+    firstname String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    lastname String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    mail String required pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)
+    phone String required
+    reviews Integer required min(1) max(5)
+}
+
+entity Produit {
+    name String required pattern(/^[A-Z][a-z]+$/) maxlength(50)
+    description String maxlength(1000)
+    price Integer required min(0)
+}
+
+entity Commerce {
+    name String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    reviews Integer required min(1) max(5)
+    address String required maxlength(100)
+}
+
+entity Cooperative {
+    id String required pattern(/^[A-Z][a-z]+$/) maxlength(30)
+    name String required pattern(/^[A-Z][a-z]+$/)
+    address String required maxlength(100)
+}
+
+relationship OneToMany {
+    Client to Commande
+    Livreur to Course
+    Commerce to Produit
+    Course to Commande
+    Commerce to Commande
+    Produit to Commande
+}
+
+relationship ManyToMany {
+    Commerce to Cooperative
+}

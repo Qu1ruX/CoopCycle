@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "livreur": {
+      "home": {
+        "title": "Livreurs",
+        "createLabel": "Livreur အသစ်ထည့်မည်",
+        "createOrEditLabel": "Livreur အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Livreurs found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Livreur အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Livreur တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Livreur တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Livreur {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Livreur"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "mail": "Mail",
+      "phone": "Phone",
+      "reviews": "Reviews",
+      "course": "Course"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "coopCycleApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "createLabel": "Создать новый Commande",
+        "createOrEditLabel": "Создать или отредактировать Commande",
+        "notFound": "No Commandes found"
+      },
+      "created": "Новый Commande создан с идентификатором {{ param }}",
+      "updated": "Commande обновлен с идентификатором {{ param }}",
+      "deleted": "Commande удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Commande {{ id }}?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "date": "Date",
+      "price": "Price",
+      "client": "Client",
+      "course": "Course",
+      "commerce": "Commerce",
+      "produit": "Produit"
+    }
+  }
+}

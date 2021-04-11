@@ -1,0 +1,62 @@
+{
+  "name": "Commande",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required",
+        "min"
+      ],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "client",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "course",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commerce",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "commerce",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "produit",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210411194442",
+  "entityTableName": "commande",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

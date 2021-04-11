@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="commerce">
+            <h2><span jhiTranslate="coopCycleApp.commerce.detail.title">Commerce</span> {{ commerce.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="coopCycleApp.commerce.name">Name</span></dt>
+                <dd>
+                    <span>{{ commerce.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.commerce.reviews">Reviews</span></dt>
+                <dd>
+                    <span>{{ commerce.reviews }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.commerce.address">Address</span></dt>
+                <dd>
+                    <span>{{ commerce.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.commerce.cooperative">Cooperative</span></dt>
+                <dd>
+                    <span *ngFor="let cooperative of commerce.cooperatives; let last = last">
+                        <a [routerLink]="['/cooperative', cooperative?.id, 'view']">{{ cooperative.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/commerce', commerce.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

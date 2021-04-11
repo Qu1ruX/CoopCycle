@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="livreur">
+            <h2><span jhiTranslate="coopCycleApp.livreur.detail.title">Livreur</span> {{ livreur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="coopCycleApp.livreur.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{ livreur.firstname }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.livreur.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{ livreur.lastname }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.livreur.mail">Mail</span></dt>
+                <dd>
+                    <span>{{ livreur.mail }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.livreur.phone">Phone</span></dt>
+                <dd>
+                    <span>{{ livreur.phone }}</span>
+                </dd>
+                <dt><span jhiTranslate="coopCycleApp.livreur.reviews">Reviews</span></dt>
+                <dd>
+                    <span>{{ livreur.reviews }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/livreur', livreur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

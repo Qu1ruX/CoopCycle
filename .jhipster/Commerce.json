@@ -1,0 +1,69 @@
+{
+  "name": "Commerce",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "reviews",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required",
+        "min",
+        "max"
+      ],
+      "fieldValidateRulesMin": "1",
+      "fieldValidateRulesMax": "5"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "commerce",
+      "relationshipName": "produit"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "commerce",
+      "relationshipName": "commande"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "commerce",
+      "relationshipName": "cooperative",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210411194842",
+  "entityTableName": "commerce",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

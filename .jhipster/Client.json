@@ -1,0 +1,71 @@
+{
+  "name": "Client",
+  "fields": [
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern",
+        "maxlength"
+      ],
+      "fieldValidateRulesPattern": "^[A-Z][a-z]+$",
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "mail",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "pattern"
+      ],
+      "fieldValidateRulesPattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "commande"
+    }
+  ],
+  "changelogDate": "20210411194342",
+  "entityTableName": "client",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
