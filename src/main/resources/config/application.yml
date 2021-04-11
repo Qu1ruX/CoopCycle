@@ -147,12 +147,12 @@ jhipster:
     title: CoopCycle API
     description: CoopCycle API documentation
     version: 0.0.1
-    terms-of-service-url:
-    contact-name:
-    contact-url:
-    contact-email:
-    license: unlicensed
-    license-url:
+    terms-of-service-url: https://mensakas.coopcycle.org/fr/legal
+    contact-name: Corentin HUMBERT
+    contact-url: corentin-humbert.fr
+    contact-email: corentin.humbert@etu.univ-grenoble-alpes.fr
+    license: Coopyleft
+    license-url: https://wiki.coopcycle.org/fr:licence
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
