@@ -149,7 +149,7 @@ jhipster:
     version: 0.0.1
     terms-of-service-url: https://mensakas.coopcycle.org/fr/legal
     contact-name: Corentin HUMBERT
-    contact-url: corentin-humbert.fr
+    contact-url: https://corentin-humbert.fr
     contact-email: corentin.humbert@etu.univ-grenoble-alpes.fr
     license: Coopyleft
     license-url: https://wiki.coopcycle.org/fr:licence
